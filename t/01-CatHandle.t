@@ -3,7 +3,7 @@ use Testo;
 use Temp::Path;
 use IO::CatHandle::AutoLines;
 
-plan 9;
+plan 10;
 
 sub term:<make-cat> (:&on-switch) {
     state @files = ("a\nb\nc", "d\ne\nf", "g\nh")
@@ -128,3 +128,11 @@ group 'can still set on-switch past instantiation (reset)' => 3 => {
     ];
     is $pass, 3, 'custom on-switch triggered';
 }
+
+is-run $*EXECUTABLE, :args[
+    '-Ilib', '-e', ｢
+        use IO::CatHandle::AutoLines;
+        42 does IO::CatHandle::AutoLines;
+    ｣,
+], :err(/"IO::CatHandle::AutoLines can only be mixed into an IO::CatHandle"/),
+   'trying to mix into wrong object';

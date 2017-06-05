@@ -7,6 +7,9 @@ role IO::CatHandle::AutoLines[Bool:D :$reset = True] {
     has &!os-store;
 
     submethod TWEAK {
+        self ~~ IO::CatHandle or die
+          'IO::CatHandle::AutoLines can only be mixed into an IO::CatHandle';
+
         return unless $reset;
 
         sub reset { $!ln = 0 }
