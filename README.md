@@ -39,7 +39,7 @@ IO::CatHandle::AutoLines - Get IO::CatHandle's current handle's line number
 
 A role that adds `.ln` method to
 [`IO::CatHandle`](https://docs.perl6.org/type/IO::CatHandle) type that will
-contain the current line number. Optionally, the lines can be re-set when
+contain the current line number. Optionally, the lines counter can be reset when
 next source handle get switched into.
 
 **Note:** only
