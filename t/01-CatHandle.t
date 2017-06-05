@@ -130,7 +130,7 @@ group 'can still set on-switch past instantiation (reset)' => 3 => {
 }
 
 is-run $*EXECUTABLE, :args[
-    '-Ilib', '-e', ｢
+    '-Ilib', |('-I' «~« $*REPO.repo-chain.map: *.path-spec), '-e', ｢
         use IO::CatHandle::AutoLines;
         42 does IO::CatHandle::AutoLines;
     ｣,
