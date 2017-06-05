@@ -13,6 +13,7 @@ IO::CatHandle::AutoLines - Get IO::CatHandle's current handle's line number
     'some'   .IO.spurt: "a\nb\nc";
     'files'  .IO.spurt: "d\ne\nf";
     'to-read'.IO.spurt: "g\nh";
+
     my $kitty = IO::CatHandle.new(<some files to-read>, :on-switch{
         say "Meow!"
     }) does IO::CatHandle::AutoLines;
