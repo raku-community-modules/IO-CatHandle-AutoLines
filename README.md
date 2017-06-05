@@ -62,6 +62,14 @@ Provides `.ln` method containing `Int:D` of the current line number. If
 `:$reset` parameter is set to `True` (default), then on source handle switch,
 the line number will be reset back to zero.
 
+```perl6
+    # Reset on-switch enabled
+    my $cat1 = IO::CatHandle.new(…) does role IO::CatHandle::AutoLines;
+
+    # Reset on-switch disabled
+    my $cat2 = IO::CatHandle.new(…) does role IO::CatHandle::AutoLines[:!reset];
+```
+
 ----
 
 #### REPOSITORY
