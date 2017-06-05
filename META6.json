@@ -2,7 +2,7 @@
     "perl"         : "6.c",
     "name"         : "IO::CatHandle::AutoLines",
     "license"      : "Artistic-2.0",
-    "version"      : "1.001001",
+    "version"      : "1.001002",
     "description"  : "Get IO::CatHandle's current handle's line number",
     "tags"         : [ "IO" ],
     "depends"      : [
