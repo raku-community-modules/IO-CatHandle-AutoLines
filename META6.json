@@ -5,9 +5,7 @@
     "version"      : "1.001002",
     "description"  : "Get IO::CatHandle's current handle's line number",
     "tags"         : [ "IO" ],
-    "depends"      : [
-        "RakudoPrereq"
-    ],
+    "depends"      : [ ],
     "test-depends" : [
         "Testo",
         "Temp::Path",
