@@ -1,10 +1,11 @@
 use MONKEY-GUTS;
 
-role IO::CatHandle::AutoLines[Bool:D :$reset = True] {
-    has Int:D $!ln = 0;
+role IO::CatHandle::AutoLines[Bool:D :$reset = True, :$LN] {
+    has Int:D $.ln is rw = 0;
     has &!os-store;
 
     submethod TWEAK {
+        PROCESS::<$LN> := $!ln if $LN;
         return unless $reset;
 
         if self ~~ IO::Handle {
@@ -56,11 +57,5 @@ role IO::CatHandle::AutoLines[Bool:D :$reset = True] {
                 v
             }
         }.new: callsame.iterator, self
-    }
-    method ln is rw {
-        Proxy.new:
-            :FETCH{ $!ln<> },
-            :STORE(-> $, $!ln { $!ln }
-        );
     }
 }
