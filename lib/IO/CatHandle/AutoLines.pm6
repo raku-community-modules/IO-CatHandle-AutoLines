@@ -42,7 +42,7 @@ role IO::CatHandle::AutoLines[Bool:D :$reset = True, :$LN] {
     }
     method get {
         my \v = callsame;
-        v === Nil ?? ($!ln = 0) !! $!ln++;
+        v === Nil ?? ($!ln = 0) !! ++$!ln;
         v
     }
     method lines {
@@ -53,7 +53,7 @@ role IO::CatHandle::AutoLines[Bool:D :$reset = True, :$LN] {
             method new(\iter, \al) { self.bless!SET-SELF(iter, al) }
             method pull-one {
                 my \v = $!iter.pull-one;
-                v =:= IterationEnd ?? ($!al.ln = 0) !! $!al.ln++;
+                v =:= IterationEnd ?? ($!al.ln = 0) !! ++$!al.ln;
                 v
             }
         }.new: callsame.iterator, self
