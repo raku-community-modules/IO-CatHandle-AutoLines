@@ -47,19 +47,18 @@ role IO::CatHandle::AutoLines[Bool:D :$reset = True, :$LN] {
     }
     method lines {
         Seq.new: my class :: does Iterator {
-            has $!iter;
+            has $!handle;
             has $!ln;
-            method !SET-SELF(\iter, \ln) {
-                $!iter := iter;
-                $!ln   := ln;
+            method !SET-SELF(\handle, \ln) {
+                $!handle := handle;
+                $!ln     := ln;
                 self
             }
-            method new(\iter, \ln) { self.CREATE!SET-SELF(iter, ln) }
+            method new(\handle, \ln) { self.CREATE!SET-SELF(handle, ln) }
             method pull-one {
-                my \v = $!iter.pull-one;
-                v =:= IterationEnd ?? ($!ln = 0) !! ++$!ln;
-                v
+                my \v = $!handle.get;
+                v =:= Nil ?? IterationEnd !! v
             }
-        }.new: callsame.iterator, $!ln
+        }.new: self, $!ln
     }
 }
