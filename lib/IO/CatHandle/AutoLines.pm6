@@ -5,10 +5,17 @@ role IO::CatHandle::AutoLines[Bool:D :$reset = True] {
     has &!os-store;
 
     submethod TWEAK {
-        return unless $reset || self.WHAT =:= IO::Handle;
+        return unless $reset;
 
-        self ~~ IO::CatHandle or die
-          'IO::CatHandle::AutoLines can only be mixed into an IO::CatHandle';
+        if self ~~ IO::Handle {
+            return unless self ~~ IO::CatHandle;
+        }
+        else {
+            die 'The '
+              ~ $?ROLE.^name
+              ~ ' role can only be mixed into an IO::CatHandle, not a '
+              ~ self.^name;
+        }
 
         sub reset { $!ln = 0 }
         with nqp::getattr(self, IO::CatHandle, '&!on-switch') -> $os {
