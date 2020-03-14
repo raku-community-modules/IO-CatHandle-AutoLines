@@ -2,7 +2,7 @@
     "perl"         : "6.c",
     "name"         : "IO::CatHandle::AutoLines",
     "license"      : "Artistic-2.0",
-    "version"      : "1.001003",
+    "version"      : "1.001004",
     "description"  : "Get IO::CatHandle's current handle's line number",
     "tags"         : [ "IO" ],
     "depends"      : [ ],
@@ -14,9 +14,9 @@
     "provides"     : {
         "IO::CatHandle::AutoLines": "lib/IO/CatHandle/AutoLines.pm6"
     },
-    "authors"       : ["Zoffix Znet"],
+    "authors"       : ["Zoffix Znet","Elizabeth Mattijsen","JJ Merelo"],
     "support"       : {
         "source" :
-        "https://github.com/zoffixznet/perl6-IO-CatHandle-AutoLines.git"
+        "https://github.com/raku-community-modules/perl6-IO-CatHandle-AutoLines.git"
     }
 }

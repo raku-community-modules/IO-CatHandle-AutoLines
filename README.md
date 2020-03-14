@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/zoffixznet/perl6-IO-CatHandle-AutoLines.svg)](https://travis-ci.org/zoffixznet/perl6-IO-CatHandle-AutoLines)
+![Test](https://github.com/raku-community-modules/perl6-IO-CatHandle-AutoLines/workflows/Test/badge.svg)
 
 # NAME
 
@@ -75,16 +75,17 @@ the line number will be reset back to zero.
 #### REPOSITORY
 
 Fork this module on GitHub:
-https://github.com/zoffixznet/perl6-IO-CatHandle-AutoLines
+https://github.com/raku-community-modules/perl6-IO-CatHandle-AutoLines
 
 #### BUGS
 
 To report bugs or request features, please use
-https://github.com/zoffixznet/perl6-IO-CatHandle-AutoLines/issues
+https://github.com/raku-community-modules/perl6-IO-CatHandle-AutoLines/issues
 
 #### AUTHOR
 
 Zoffix Znet (http://perl6.party/)
+Liz Mattijsen
 
 #### LICENSE
 
