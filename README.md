@@ -1,4 +1,4 @@
-![Test](https://github.com/raku-community-modules/perl6-IO-CatHandle-AutoLines/workflows/Test/badge.svg)
+[![Test](https://github.com/raku-community-modules/perl6-IO-CatHandle-AutoLines/workflows/Test/badge.svg)](https://github.com/raku-community-modules/perl6-IO-CatHandle-AutoLines/actions)
 
 # NAME
 
