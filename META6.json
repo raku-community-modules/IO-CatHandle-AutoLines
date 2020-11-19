@@ -17,6 +17,6 @@
     "authors"       : ["Zoffix Znet","Elizabeth Mattijsen","JJ Merelo"],
     "support"       : {
         "source" :
-        "https://github.com/raku-community-modules/perl6-IO-CatHandle-AutoLines.git"
+        "https://github.com/raku-community-modules/IO-CatHandle-AutoLines.git"
     }
 }
