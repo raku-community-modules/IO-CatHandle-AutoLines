@@ -7,7 +7,7 @@ IO::CatHandle::AutoLines - Get IO::CatHandle's current handle's line number
 
 # SYNOPSIS
 
-```perl6
+```raku
     use IO::CatHandle::AutoLines;
 
     'some'   .IO.spurt: "a\nb\nc";
@@ -54,7 +54,7 @@ read data will not increment the line counter.
 
 Defined as:
 
-```perl6
+```raku
     role IO::CatHandle::AutoLines[Bool:D :$reset = True]
 ```
 
@@ -62,7 +62,7 @@ Provides `.ln` method containing `Int:D` of the current line number. If
 `:$reset` parameter is set to `True` (default), then on source handle switch,
 the line number will be reset back to zero.
 
-```perl6
+```raku
     # Reset on-switch enabled
     my $cat1 = IO::CatHandle.new(…) does role IO::CatHandle::AutoLines;
 
@@ -75,12 +75,12 @@ the line number will be reset back to zero.
 #### REPOSITORY
 
 Fork this module on GitHub:
-https://github.com/raku-community-modules/perl6-IO-CatHandle-AutoLines
+https://github.com/raku-community-modules/IO-CatHandle-AutoLines
 
 #### BUGS
 
 To report bugs or request features, please use
-https://github.com/raku-community-modules/perl6-IO-CatHandle-AutoLines/issues
+https://github.com/raku-community-modules/IO-CatHandle-AutoLines/issues
 
 #### AUTHOR
 
