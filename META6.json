@@ -1,22 +1,33 @@
 {
-    "perl"         : "6.c",
-    "name"         : "IO::CatHandle::AutoLines",
-    "license"      : "Artistic-2.0",
-    "version"      : "1.001004",
-    "description"  : "Get IO::CatHandle's current handle's line number",
-    "tags"         : [ "IO" ],
-    "depends"      : [ ],
-    "test-depends" : [
-        "Testo",
-        "Temp::Path",
-        "Test::META"
-    ],
-    "provides"     : {
-        "IO::CatHandle::AutoLines": "lib/IO/CatHandle/AutoLines.pm6"
-    },
-    "authors"       : ["Zoffix Znet","Elizabeth Mattijsen","JJ Merelo"],
-    "support"       : {
-        "source" :
-        "https://github.com/raku-community-modules/IO-CatHandle-AutoLines.git"
-    }
+  "auth": "zef:raku-community-modules",
+  "authors": [
+    "Zoffix Znet",
+    "Elizabeth Mattijsen",
+    "JJ Merelo"
+  ],
+  "build-depends": [
+  ],
+  "depends": [
+  ],
+  "description": "Get IO::CatHandle's current handle's line number",
+  "license": "Artistic-2.0",
+  "name": "IO::CatHandle::AutoLines",
+  "perl": "6.c",
+  "provides": {
+    "IO::CatHandle::AutoLines": "lib/IO/CatHandle/AutoLines.rakumod"
+  },
+  "resources": [
+  ],
+  "source-url": "https://github.com/raku-community-modules/IO-CatHandle-AutoLines.git",
+  "support": {
+    "source": "https://github.com/raku-community-modules/IO-CatHandle-AutoLines.git"
+  },
+  "tags": [
+    "IO"
+  ],
+  "test-depends": [
+    "Testo",
+    "Temp::Path"
+  ],
+  "version": "1.1"
 }

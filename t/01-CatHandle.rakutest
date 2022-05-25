@@ -1,4 +1,3 @@
-use lib <lib>;
 use Testo;
 use Temp::Path;
 use IO::CatHandle::AutoLines;
@@ -129,11 +128,9 @@ group 'can still set on-switch past instantiation (reset)' => 3 => {
     is $pass, 3, 'custom on-switch triggered';
 }
 
-is-run $*EXECUTABLE, :args[
-    '-Ilib', |('-I' «~« $*REPO.repo-chain.map: *.path-spec), '-e', ｢
-        use IO::CatHandle::AutoLines;
-        42 does IO::CatHandle::AutoLines;
-    ｣,
-], :status{.so},
-   :err(/"The IO::CatHandle::AutoLines role can only be mixed into an IO::CatHandle"/),
-   'trying to mix into wrong object';
+try "42 does IO::CatHandle::AutoLines".EVAL;
+nok $! ~~ Exception && $!.payload
+  ~~ "The IO::CatHandle::AutoLines role can only be mixed into an IO::CatHandle",
+  'trying to mix into wrong object';
+
+# vim: expandtab shiftwidth=4

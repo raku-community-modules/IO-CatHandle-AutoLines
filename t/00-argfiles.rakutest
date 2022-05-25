@@ -1,8 +1,10 @@
-use IO::CatHandle::AutoLines; # -*- mode:perl6 -*-
 use Test;
+use IO::CatHandle::AutoLines;
+
+plan 2;
 
 eval-lives-ok '$*ARGFILES does IO::CatHandle::AutoLines', "Can recast \$*ARGFILES";
 
 is $*ARGFILES.ln, 0, "Initialized line counter";
 
-done-testing;
+# vim: expandtab shiftwidth=4

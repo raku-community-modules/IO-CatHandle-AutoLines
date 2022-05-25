@@ -1,3 +1,2 @@
-.precomp
-*~
-
+.precomp/
+/IO-CatHandle-AutoLines-*
